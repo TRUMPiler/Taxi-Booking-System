@@ -1,0 +1,71 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+@import url('https://fonts.cdnfonts.com/css/taxi-2');
+.banner
+{
+  max-width: 100%;
+  height:100vh;
+  background-image:linear-gradient(rgba(0,0,0,0.50),rgba(0,0,0,0)),url(images/background.gif);
+  background-size: cover;
+  background-position: center;
+}
+.navbar
+{
+  width: 90%;
+  
+  margin:auto;
+  padding:35px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo
+{
+  max-width: 70px;
+  width: 50px;
+  cursor: pointer;
+
+}
+.navbar ul li
+{
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+  position: relative;
+}
+.navbar ul li a
+{
+    font-family: 'Taxi', sans-serif;    
+  text-decoration: none;
+  color: white;
+text-transform:uppercase;  
+}
+.navbar ul li::after
+{
+  content: '';
+  height: 3px;
+  width: 0;
+  background:black; 
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s; 
+}
+.navbar ul li:hover::after
+{
+  width: 100%;
+}
+.content
+{
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: azure;
+}
