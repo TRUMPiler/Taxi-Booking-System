@@ -1,0 +1,9 @@
+body{
+    background-color: yellow;
+}
+label{
+    font: message-box;
+}
+input[type="text"],[type="email"],[type="tel"],[type="number"]{
+    width: 50%;
+}

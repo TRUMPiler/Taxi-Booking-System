@@ -7,10 +7,18 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>   
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>   
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      h2
+{
+  margin: auto;
+  padding: 10%;
+  color: white;
+}
+    </style>
 </head>
 <body>
 <div class="banner" >
@@ -23,18 +31,18 @@ session_start();
           if(isset($_SESSION["id"]))
           {
             $id=$_SESSION["id"];
-            echo "<li><a href='logout.php'>$id</a></li>";
+            echo "<li><a href='login.php'>$id</a></li>";
             
           }
           else
           {
-            echo "<li><a href='login.php'>Login</a></li>"; 
+            echo "<li><a href='Register.php'>Login</a></li>"; 
           }
         ?>
       </ul>
     </div>
-    <div data-aos="fade-down-left" data-aos-duration="1000">
-      
+    <div>
+      <h2>ERROR SERVER CONNECTION FAILED</h2>
     </div>
     <script>
     AOS.init();

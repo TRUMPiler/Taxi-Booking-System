@@ -56,9 +56,16 @@ text-transform:uppercase;
   bottom: -10px;
   transition: 0.3s; 
 }
+
 .navbar ul li:hover::after
 {
   width: 100%;
+}
+h2
+{
+  padding: 7px;
+  margin: auto;
+  color: white;
 }
 .content
 {

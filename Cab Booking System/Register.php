@@ -56,9 +56,18 @@ session_start();
             $password="pranav1122";
             $host="localhost";
             $database="test123";
-            $mysql=mysqli_connect($host,$username,$password,$database);
+            
+            
+            try {
+              $mysql=mysqli_connect($host,$username,$password,$database);
             $query="insert into tbl_cust values(1,'Pranav')";
-            mysqli_execute_query($mysql,$query);
+              mysqli_execute_query($mysql,$query);
+            }
+            
+            //catch exception
+            catch(Exception $e) {
+              header("location:error.php");
+            }
         ?>
 
 
