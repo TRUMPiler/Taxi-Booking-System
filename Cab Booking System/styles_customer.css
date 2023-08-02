@@ -4,7 +4,7 @@ body{
 hr{
     border: 3px solid black ;
 }
-.container{
+.container-fluid{
     margin: auto;
     padding-right: 40%;
 }
@@ -15,5 +15,5 @@ input[type="text"],[type="email"],[type="tel"],[type="number"]{
     width: 50%;
 }
 img{
-    
+    height: 100px;
 }

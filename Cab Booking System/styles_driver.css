@@ -7,3 +7,6 @@ label{
 input[type="text"],[type="email"],[type="tel"],[type="number"]{
     width: 50%;
 }
+img{
+    height: 150px;
+}
