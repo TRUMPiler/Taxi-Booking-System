@@ -43,12 +43,12 @@ session_start();
                 <input type="tel" class="form-control" id="" name="contact" placeholder="Enter your contact number" maxlength="10" ><br><br>
             </div>
             <div class="form-group">
-                <label for="Age">Age:</label><br><br>
-                <input type="number" class="form-control" name="Age" id="" maxlength="3" placeholder="0"><br><br>
+                <label for="Age">Date:</label><br><br>
+                <input type="date" class="form-control" name="dob" id="" maxlength="3" placeholder="0"><br><br>
             </div>
             <label for="Gender">Gender:</label><br><br>
-            <label class="radio-inline"><input type="radio" name="optradio" checked> Male</label>
-            <label class="radio-inline"><input type="radio" name="optradio"> Female </label><br><br>
+            <label class="radio-inline"><input type="radio" name="gender" value="Male" checked> Male</label>
+            <label class="radio-inline"><input type="radio" name="gender" value="Female"> Female </label><br><br>
             <div class="form-group">
                 <label for="Address">Address:</label><br><br>
                 <textarea name="address" class="form-control" id="" cols="30" rows="4" placeholder="Enter your Address"></textarea><br><br>
@@ -57,8 +57,14 @@ session_start();
             <?php
                     if(isset($_POST["submit"]))
                     {
+                        $_SESSION["fname"]=$_POST["fname"];
+                        $_SESSION["lname"]=$_POST["lname"];
+                        $_SESSION["dob"]=$_POST["dob"];
+                        $_SESSION["gender"]=$_POST["gender"];
+                        $_SESSION["contact"]=$_POST["contact"];
+                        $_SESSION["address"]=$_POST["address"];
                         $_SESSION["email"]=$_POST["email"];
-                        header("location:otp.php");                             
+                        header("location:otp");                             
                     }
             ?>
         </form>

@@ -35,7 +35,7 @@ session_start();
                      {
                         if($_SESSION["otp"]==$_POST["otp"])
                         {
-                            header("location:index.php");
+                            header("location:index");
                         }
                      } 
             ?>
