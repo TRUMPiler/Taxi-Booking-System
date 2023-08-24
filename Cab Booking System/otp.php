@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION["otp"]))
+if(isset($_SESSION["email"]))
 {
     $otp=random_int(10000,99999);
     $to_email = $_SESSION["email"];
@@ -14,10 +14,13 @@ if(isset($_SESSION["otp"]))
     } 
     else 
     {
+       
         echo "Email sending failed...";
     }
 }
 else
 {
-    header("location:process.php");
+    header("location:index");
 }
+
+?>

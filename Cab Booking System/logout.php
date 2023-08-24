@@ -10,6 +10,7 @@ session_start();
     <link rel="stylesheet" href="style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>   
+  <script src="js/loader.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -17,8 +18,8 @@ session_start();
     <div class="navbar" data-aos="fade-down-left" data-aos-duration="1000">
      <a href="index.php"><img src="images/image.png" class="logo"></a>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">services</a></li>
+        <li><a href="index">Home</a></li>
+        <li><a href="service">services</a></li>
         <?php
        if(isset($_SESSION["id"]))
        {
@@ -55,18 +56,23 @@ session_start();
 
         <?php
             #SQL Section:
-            $username="Pranav";
-            $password="pranav1122";
-            $host="localhost";
-            $database="test123";
-            $mysql=mysqli_connect($host,$username,$password,$database);
-            $query="insert into tbl_cust values(1,'Pranav')";
-            mysqli_execute_query($mysql,$query);
+        //     $username="Pranav";
+        //     $password="pranav1122";
+        //     $host="localhost";
+        //     $database="test123";
+        //     $mysql=mysqli_connect($host,$username,$password,$database);
+        //     $query="insert into tbl_cust values(1,'Pranav')";
+        //     mysqli_execute_query($mysql,$query);
+        // 
         ?>
 
 
     <script>
     AOS.init();
   </script>
+    <script>
+        window.addEventListener("load",function(){HH();})
+        loading();
+    </script>
 </body>
 </html>

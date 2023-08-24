@@ -9,6 +9,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>   
+    <script src="js/loader.js"></script>
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <style>
@@ -44,6 +45,10 @@ session_start();
     <div>
       <h2>ERROR SERVER CONNECTION FAILED</h2>
     </div>
+    <script>
+        window.addEventListener("load",function(){HH();})
+        loading();
+    </script>
     <script>
     AOS.init();
   </script>
