@@ -9,7 +9,7 @@ session_start();
     <link rel="stylesheet" href="style1.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
-  <script src="js/loader.js"></script>  
+  <script src="loader.js"></script>  
     <title>Document</title>
 </head>
 <body>
@@ -17,8 +17,10 @@ session_start();
     <div class="navbar" data-aos="fade-down-left"   data-aos-duration="1000">
      <a href="index.php"><img src="images/cab2.png" class="logo"></a>
       <ul>  
-        <li><a href="index">Home</a></li>
-        <li><a href="service">services</a></li>
+          <li><a href="index" class="button">Home</a></li>
+        <li><a href="service" class="button">services</a></li>
+        
+            
         <?php
         if(isset($_SESSION["verified"]))
         {
@@ -37,17 +39,26 @@ session_start();
             echo "<li><a href='login'>Login</a></li>"; 
           }
         ?>
+      
       </ul>
     </div>
     <div data-aos="fade-down-left" data-aos-duration="1000" data-aos-delay="500">
-      <h2>Welcome to TAXDAS</h2>
+        <form>
+                <input type="text" name="source" placeholder="From">
+                <input type="text" name="destination" placeholder="To">
+                
+        </form>
+      <h1>Welcome to TAXDAS</h1>
     </div>
     <script>
-        window.addEventListener("load",function(){HH();})
+        window.addEventListener("load",function(){HH();});
         loading();
     </script>
     <script>
     AOS.init();
   </script>
+    <div>
+           
+        </div>
 </body>
 </html>
