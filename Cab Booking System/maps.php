@@ -28,6 +28,7 @@
     <form class="myForm" action="#" method="POST">
     <label>coordinates for first address</label><br>
     <textarea name="address" id="address" cols="30" rows="10"><?php echo $_SESSION['address']?> </textarea>
+    <ul></ul>
     <input type="text" name="latitude" id='lat' hidden><br>
     <input type="text" name="longitude" id='long' hidden><br>
     <label>coordinates for destination address</label><br>
@@ -155,7 +156,7 @@ var map = L.mapquest.map('map', {
     function calculate()
     {
         
-        const settings = {
+    const settings = {
 	async: true,
 	crossDomain: true,
 	url: 'https://trueway-matrix.p.rapidapi.com/CalculateDrivingMatrix?origins='+document.querySelector(".myForm input[name='latitude']").value+'%2C'+document.querySelector(".myForm input[name='longitude']").value+'&destinations='+document.querySelector(".myForm input[name='dlat']").value+'%2C'+document.querySelector(".myForm input[name='dlong']").value+'&avoid_highway=true',
@@ -180,16 +181,39 @@ $.ajax(settings).done(function (response) {
         const result=new Date(totalMs).toISOString().slice(11,19);
         return result;
     }
+    var input=document.querySelector(".myForm textaddress[name='address']");
+    var delay = (function(){
+  var timer = 0;
+  return function(callback, ms){
+  clearTimeout (timer);
+  timer = setTimeout(callback, ms);
+ };
+})();
+    $("#address").keyup(async function(){
+      
+    delay(function(){
+      const settings = {
+	async: true,
+	crossDomain: true,
+	url: 'https://trueway-places.p.rapidapi.com/FindPlaceByText?text='+document.querySelector(".myForm textarea[name='address']").value+'&language=en',
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '39bebf8c65msh3c5431b6e89763ap1093ddjsn2d7d1e854615',
+		'X-RapidAPI-Host': 'trueway-places.p.rapidapi.com'
+	} 
+};
+
+$.ajax(settings).done(function (response) {
+	console.log(response);
+});
+    },800)
+  
+    
+  })  
     </script>
  
 <div id="map"></div> 
 </form>
     </div>
-
-
-
-
-
-
 </body>
 </html>
