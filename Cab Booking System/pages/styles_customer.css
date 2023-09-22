@@ -1,0 +1,16 @@
+body{
+    background-color: yellow;
+}
+hr{
+    border: 3px solid black ;
+}
+.container{
+    margin: auto;
+    padding-right: 40%;
+}
+label{
+    font: message-box;
+}
+input[type="text"],[type="email"],[type="tel"],[type="number"]{
+    width: 50%;
+}
