@@ -13,7 +13,7 @@ if(isset($_SESSION["email"]) and isset($_SESSION["fname"]))
     } 
     else
     {
-        header("location:process.php");
+        // header("location:process.php");
     }
        
 } 
@@ -24,25 +24,17 @@ if(isset($_SESSION["email"]) and isset($_SESSION["fname"]))
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles_customer.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="js/loader.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"
-             ></script>  
     <title>Register</title>
     <style>
-       
+        body
+        {
+            background:url('images/back2.jpg');
+            background-size: cover;
+            color:white;
+        }
         label{
             color: black;
             font: message-box;
@@ -144,6 +136,7 @@ if(isset($_SESSION["email"]) and isset($_SESSION["fname"]))
 
             .error span {
                 color: red;
+                
             }
 
             .success span {
@@ -152,8 +145,9 @@ if(isset($_SESSION["email"]) and isset($_SESSION["fname"]))
 
             span.error {
                 color: red;
+                border-radius: 2px solid red;
             }
-
+            
             i {
                 font-weight: 900;
                 font-family: 'Font Awesome 5 Free';
@@ -171,7 +165,7 @@ if(isset($_SESSION["email"]) and isset($_SESSION["fname"]))
         <div class="row">
             <div class="mx-auto col-10 col-md-8 col-lg-7">
                  
-                <form action="#" method="POST" onsubmit="loading()" enctype="multipart/form-data" id="myform">
+                <form action="" onsubmit="loading()" enctype="multipart/form-data" id="myform">
                 <h3 style="color: black;height: 45px;text-align: center;background-color: yellow;margin: 0px;padding: 5px;border: none;border-radius: 10px 10px 0px 0px">Basic Info:</h3>
                 
                     <br>
@@ -179,7 +173,7 @@ if(isset($_SESSION["email"]) and isset($_SESSION["fname"]))
                      <div class="form-group">
                          <img  class="profile" src="avatar.gif" alt="eeyah"><br>
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input cursor-pointer" id="attachment" name="file" required/>
+                        <input type="file" class="custom-file-input cursor-pointer" id="attachment" name="file" required>
                         <label for="attachment" class="file-upload" class="custom-file-label cursor-pointer rounded4">
                           <span class="rounded2r">Add a photo*</span>
                           <span id="filename"></span>
@@ -258,13 +252,6 @@ if(isset($_SESSION["email"]) and isset($_SESSION["fname"]))
 
             <?php
                     
-//                    const Rules = validation.getRules();
-//                    Rules["custom"] = {
-//                      message: "Error Message here",
-//                      method: el => {
-//                        // ... rule here ...
-//                      }    
-//                    }
             
             
                     if(isset($_POST["submit"]) and $veri=="")
@@ -297,10 +284,9 @@ if(isset($_SESSION["email"]) and isset($_SESSION["fname"]))
                                     {
                                         // Insert image file name into database
                                         $_SESSION["filename"]=$fileName;
-                                        header("location:register_vehicle.php");       
+                                        echo "<script>window.location='register_vehicle'</script>";
                                     }
                                 }
-                                
                                 else
                                 {
                                     echo 'Sorry, only JPG, JPEG, PNG, GIF, & PDF files are allowed to upload.';
